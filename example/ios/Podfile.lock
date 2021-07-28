@@ -1,0 +1,43 @@
+PODS:
+  - AMapFoundation (1.6.2)
+  - AMapLocation (2.6.4):
+    - AMapFoundation (~> 1.6.1)
+  - AMapNavi (7.2.0):
+    - AMapFoundation (~> 1.6.1)
+  - AMapSearch (7.1.0):
+    - AMapFoundation (~> 1.4)
+  - Flutter (1.0.0)
+  - nav_view (0.0.1):
+    - AMapLocation
+    - AMapNavi
+    - AMapSearch
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - nav_view (from `.symlinks/plugins/nav_view/ios`)
+
+SPEC REPOS:
+  trunk:
+    - AMapFoundation
+    - AMapLocation
+    - AMapNavi
+    - AMapSearch
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  nav_view:
+    :path: ".symlinks/plugins/nav_view/ios"
+
+SPEC CHECKSUMS:
+  AMapFoundation: 672dc3a4759cb733f447c1e1b020f7ba2729f4ab
+  AMapLocation: b4162db67f813508a14ee7e05c7ee4073785221d
+  AMapNavi: 4667acc6dd1da5fee08aceb2071e1547efaf1bc5
+  AMapSearch: 6bd6d361c5eb00110e0bffa4acf88b7bb9f7e059
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  nav_view: 1ac925f0c2dcc24aaddd6c1f414104e334ac77b4
+
+PODFILE CHECKSUM: 705da7d00533b09c8637b6c018adcad8875f3689
+
+COCOAPODS: 1.8.4

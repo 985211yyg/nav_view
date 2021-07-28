@@ -1,0 +1,64 @@
+group 'com.reemii.nav_view'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.61"
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 16
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "arm64-v8a"//"x86", "x86_64"
+        }
+
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+    dependencies {
+        //引入导航和搜索  导航包括了地图不需要重复引入
+        api 'com.amap.api:navi-3dmap:7.4.0_3dmap7.4.0'
+        api 'com.amap.api:search:7.1.0'
+        api 'com.amap.api:location:5.2.0'
+        api project(":services")
+        implementation 'androidx.appcompat:appcompat:1.1.0'
+        implementation 'androidx.cardview:cardview:1.0.0'
+        implementation 'com.blankj:utilcodex:1.26.0'
+        implementation "androidx.core:core-ktx:+"
+        implementation "org.jetbrains.kotlin:kotlin-stdlib:1.3.61" //注解处理器，生成RxHttp类
+    }
+    repositories {
+        mavenCentral()
+    }
+}

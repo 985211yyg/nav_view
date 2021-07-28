@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/flutter_top_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_margin="@dimen/dp_8"
+        android:visibility="gone"
+        app:cardCornerRadius="@dimen/dp_8"
+        app:cardElevation="@dimen/dp_4">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:background="#2d3038"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.amap.api.navi.view.NextTurnTipView
+                        android:id="@+id/flutter_nav_NextTurnTipView"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="@dimen/dp_16" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/dp_20">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/flutter_nav_distance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="计算中.."
+                                android:textColor="@android:color/white"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginLeft="6dp"
+                                android:text="进入"
+                                android:textColor="@color/whitesmoke"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/flutter_nav_road_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/white"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            tools:text="天府大道北段" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_8"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/flutter_nav_total_distance"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/whitesmoke"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:text="剩余20公里" />
+
+                    <TextView
+                        android:id="@+id/flutter_nav_retain_time"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/whitesmoke"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:text="剩余20分钟" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/flutter_nav_arrived_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/whitesmoke"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="预计11:00到达" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/flutter_top_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|top"
+                android:drawableLeft="@drawable/ic_close_black"
+                android:padding="@dimen/dp_10" />
+
+
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/flutter_nav_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:drawableRight="@drawable/ic_arrow_white"
+                android:paddingLeft="@dimen/dp_16"
+                android:paddingRight="@dimen/dp_16"
+                android:tint="@color/themeColor"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/flutter_nav_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="前往乘客位置"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/flutter_nav_order"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_assignment" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/whitesmoke" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/flutter_nav_top_navi_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/dp_10"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/flutter_nav_nav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_navi_bg"
+                        android:tint="@color/themeColor" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="导航"
+                        android:textColor="@color/themeColor"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/flutter_nav_dest_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp_10">
+
+                    <TextView
+                        android:id="@+id/lib_net_nav_go"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10"
+                        android:text="去"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_big"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/flutter_nav_dest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxEms="13"
+                        android:maxLines="1"
+                        android:textColor="@color/themeColor"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:text="芳华里芳华里芳华里芳华里芳华里芳华里芳华里芳华里" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/flutter_nav_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/flutter_nav_dest_info"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_big"
+                    android:textStyle="bold"
+                    tools:text="剩余%s公里   预计%s分钟" />
+
+
+            </RelativeLayout>
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/flutter_nav_top_navi_info">
+
+                <com.amap.api.navi.AMapNaviView
+                    android:id="@+id/flutter_nav_navView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/aliceblue">
+
+                </com.amap.api.navi.AMapNaviView>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|bottom"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp_10">
+
+                    <ImageButton
+                        android:id="@+id/flutter_nav_whole_route"
+                        android:layout_width="@dimen/dp_40"
+                        android:layout_height="@dimen/dp_40"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:background="@drawable/ic_circle_white_btn_bg"
+                        android:elevation="@dimen/dp_4"
+                        android:src="@drawable/lib_nav_route"
+                        android:textColor="#303135" />
+
+                    <ImageButton
+                        android:id="@+id/flutter_nav_current_location"
+                        android:layout_width="@dimen/dp_40"
+                        android:layout_height="@dimen/dp_40"
+                        android:background="@drawable/ic_circle_white_btn_bg"
+                        android:elevation="@dimen/dp_4"
+                        android:src="@drawable/lib_nav_location"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+
+            </FrameLayout>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</FrameLayout>
